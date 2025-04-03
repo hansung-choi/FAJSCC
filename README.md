@@ -1,6 +1,6 @@
 # FAJSCC
 
-Implementations of main experiments for the paper "Feature Importance-Aware Deep Joint Source-Channel Coding for Computationally Efficient Image Transmission"
+Implementations of main experiments for the paper "Feature Importance-Aware Deep Joint Source-Channel Coding for Computationally Efficient and Adjustable Image Transmission"
 
 ## Requirements
 1. python 3.8.8
