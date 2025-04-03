@@ -25,22 +25,33 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
     python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info=4 model_name=smallConvJSCC data_info=DIV2K
 
 
-### Example of training a model with a randomly assigned SNR for each data batch (Only "smallFAJSCC" or "baseFAJSCC" models are allowed).
+### Example of training a model with a randomly assigned SNR for each data batch.
+**Only "smallFAJSCC" or "baseFAJSCC" models are allowed.**
 
     python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info="random" model_name=smallFAJSCC data_info=DIV2K
 
 
-### Example of experimental results for "Architecture Efficiency" (You can obtain test results for other settings by simply modifying the SNR or rcpp values in the main_total_evalGM.py file).
+### Example of experimental results for "Architecture Efficiency".
+**You can obtain test results for other settings by simply modifying the SNR or rcpp values in the main_total_evalGM.py file.**
 
     python3 main_total_evalGM.py chan_type="AWGN" performance_metric="PSNR" data_info=DIV2K
 
 
-### Example of experimental results for "PSNR and SSIM Results" (You can obtain test results for other settings by simply modifying the rcpp values in the main_total_eval.py file).
+### Example of experimental results for "PSNR and SSIM Results".
+**You can obtain test results for other settings by simply modifying the rcpp values in the main_total_eval.py file**
 
     python3 main_total_eval.py chan_type="AWGN" performance_metric="PSNR" data_info=DIV2K
 
 
-### Example of experimental results for "Computation Resource Adjustment" and "Complexity of Encoder and Decoder" (You can obtain test results for other settings by simply modifying the SNR or rcpp values in the main_total_evalratio.py file).
+### Example of experimental results for "Computation Resource Adjustment" and "Complexity of Encoder and Decoder".
+**You can obtain test results for other settings by simply modifying the SNR or rcpp values in the main_total_evalratio.py file**
 
     python3 main_total_evalratio.py chan_type="AWGN" performance_metric="PSNR" data_info=DIV2K
+
+
+### Example of experimental results for "Visual Inspection".
+
+    python3 main_model_visualize.py  SNR_info=1 rcpp=12 chan_type="AWGN" performance_metric="PSNR" model_name=baseResJSCC data_info=DIV2K
+
+
 
