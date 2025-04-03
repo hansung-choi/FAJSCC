@@ -15,8 +15,9 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
 1. **chan_type**: The type of communication channel, which can be either **"AWGN" or "Rayleigh"**.
 2. **rcpp**: The reciprocal of **cpp** (channel usage per RGB pixels). It can take one of the following discrete values: **12, 16, or 24**.
 3. **SNR_info**: The channel SNR value, which can be one of **1, 4, 7, or 10** dB.
-4. **data_info**: The dataset name (possible value: **"DIV2K"**).
-5. **model_name**: The model name, which can be one of the following: **"smallConvJSCC", "baseConvJSCC", "smallResJSCC", "baseResJSCC", "smallSwinJSCC", "baseSwinJSCC", "smallFAwoSIJSCC", "baseFAwoSIJSCC", "smallFAJSCC", or "baseFAJSCC"**.
+4. **performance_metric**: The performance metric to be maximized, which can be either **"PSNR" or "SSIM"**.
+5. **data_info**: The dataset name (possible value: **"DIV2K"**).
+6. **model_name**: The model name, which can be one of the following: **"smallConvJSCC", "baseConvJSCC", "smallResJSCC", "baseResJSCC", "smallSwinJSCC", "baseSwinJSCC", "smallFAwoSIJSCC", "baseFAwoSIJSCC", "smallFAJSCC", or "baseFAJSCC"**.
 
 
 ### Example of training a model where the training SNR matches the test SNR.
