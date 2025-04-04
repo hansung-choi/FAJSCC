@@ -26,7 +26,7 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
 
 
 ### Example of training a model with a randomly assigned SNR for each data batch.
-**Only "smallFAJSCC" or "baseFAJSCC" models are allowed.**
+**Only "smallFAJSCCwSA" or "baseFAJSCCwSA" models are allowed.**
 
     python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info="random" model_name=smallFAJSCCwSA data_info=DIV2K
 
