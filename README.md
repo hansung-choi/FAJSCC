@@ -20,12 +20,12 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
 6. **model_name**: The model name, which can be one of the following: **"smallConvJSCC", "baseConvJSCC", "smallResJSCC", "baseResJSCC", "smallSwinJSCC", "baseSwinJSCC", "smallFAJSCCwSA", "baseFAJSCCwSA", "smallFAJSCCwoSA", or "baseFAJSCCwoSA"**.
 
 
-### Example of training a model where the training SNR matches the test SNR.
+### Example of training a model where the training SNR matches the test SNR (no SNR adaptive).
 
     python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info=4 model_name=smallConvJSCC data_info=DIV2K
 
 
-### Example of training a model with a randomly assigned SNR for each data batch.
+### Example of training a model with SNR adaptive.
 **Only "smallFAJSCCwSA" or "baseFAJSCCwSA" models are allowed.**
 
     python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info="random" model_name=smallFAJSCCwSA data_info=DIV2K
