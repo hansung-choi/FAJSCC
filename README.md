@@ -17,7 +17,7 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
 3. **SNR_info**: The channel SNR value, which can be one of **1, 4, 7, or 10** dB.
 4. **performance_metric**: The performance metric to be maximized, which can be either **"PSNR" or "SSIM"**.
 5. **data_info**: The dataset name (possible value: **"DIV2K"**).
-6. **model_name**: The model name, which can be one of the following: **"smallConvJSCC", "baseConvJSCC", "smallResJSCC", "baseResJSCC", "smallSwinJSCC", "baseSwinJSCC", "smallFAwoSIJSCC", "baseFAwoSIJSCC", "smallFAJSCC", or "baseFAJSCC"**.
+6. **model_name**: The model name, which can be one of the following: **"smallConvJSCC", "baseConvJSCC", "smallResJSCC", "baseResJSCC", "smallSwinJSCC", "baseSwinJSCC", "smallFAJSCCwSA", "baseFAJSCCwSA", "smallFAJSCCwoSA", or "baseFAJSCCwoSA"**.
 
 
 ### Example of training a model where the training SNR matches the test SNR.
@@ -28,7 +28,7 @@ Implementations of main experiments for the paper "Feature Importance-Aware Deep
 ### Example of training a model with a randomly assigned SNR for each data batch.
 **Only "smallFAJSCC" or "baseFAJSCC" models are allowed.**
 
-    python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info="random" model_name=smallFAJSCC data_info=DIV2K
+    python3 main_train.py rcpp=12 chan_type=AWGN performance_metric=PSNR SNR_info="random" model_name=smallFAJSCCwSA data_info=DIV2K
 
 
 ### Example of experimental results for "Architecture Efficiency".
