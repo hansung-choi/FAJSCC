@@ -2,8 +2,8 @@ from .common_component import *
 from .ConvComponent import *
 from .ResConvComponent import  deconv_ResBlock
 from .SWComponent import SWGroup
-from .FAComponent import FAGroup
-from .FAwoSIComponent import FAwoSIGroup
+from .FAwSAComponent import FAGroup_wSA
+from .FAwoSAComponent import FAGroup_woSA
 
 class ConvDecoder(nn.Module):
     def __init__(self, model_info):
@@ -104,9 +104,9 @@ class SwinDecoder(nn.Module):
             out = self.upsample_layers[i](out)
         return out
 
-class FAwoSIDecoder(nn.Module):
+class FADecoder_woSA(nn.Module):
     def __init__(self, model_info):
-        super(FAwoSIDecoder, self).__init__()
+        super(FADecoder_woSA, self).__init__()
         color_channel = model_info['color_channel']
         n_feats_list = model_info['n_feats_list']
         n_block_list = model_info['n_block_list']
@@ -123,7 +123,7 @@ class FAwoSIDecoder(nn.Module):
         self.head_list = nn.Conv2d(C,n_feats_list[-1], kernel_size=1, stride=1, padding=0)
         
         for i in range(n_stage):
-            group_layer = FAwoSIGroup(n_feats_list[-1-i],n_block_list[-1-i],window_size_list[-1-i],ratio)
+            group_layer = FAGroup_woSA(n_feats_list[-1-i],n_block_list[-1-i],window_size_list[-1-i],ratio)
             self.group_layers.append(group_layer)
             
             if i==n_stage-1:
@@ -149,9 +149,9 @@ class FAwoSIDecoder(nn.Module):
                 out = self.upsample_layers[i](out)
             return out
 
-class FADecoder(nn.Module):
+class FADecoder_wSA(nn.Module):
     def __init__(self, model_info):
-        super(FADecoder, self).__init__()
+        super(FADecoder_wSA, self).__init__()
         color_channel = model_info['color_channel']
         n_feats_list = model_info['n_feats_list']
         n_block_list = model_info['n_block_list']
@@ -168,7 +168,7 @@ class FADecoder(nn.Module):
         self.head_list = nn.Conv2d(C,n_feats_list[-1], kernel_size=1, stride=1, padding=0)
         
         for i in range(n_stage):
-            group_layer = FAGroup(n_feats_list[-1-i],n_block_list[-1-i],window_size_list[-1-i],ratio)
+            group_layer = FAGroup_wSA(n_feats_list[-1-i],n_block_list[-1-i],window_size_list[-1-i],ratio)
             self.group_layers.append(group_layer)
             
             if i==n_stage-1:

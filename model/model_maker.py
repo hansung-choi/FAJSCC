@@ -33,48 +33,48 @@ def get_model_info(cfg):
         model_info['n_feats_list'] = [40,60,80,160] 
     elif cfg.model_name == "baseSwinJSCC":
         model_info['n_feats_list'] = [60,90,120,200] 
-    elif cfg.model_name == "smallFAJSCC" or cfg.model_name == "smallFAwoSIJSCC":
+    elif cfg.model_name == "smallFAJSCCwSA" or cfg.model_name == "smallFAJSCCwoSA":
         model_info['n_feats_list'] = [40,60,80,260] 
-    elif cfg.model_name == "baseFAJSCC" or cfg.model_name == "baseFAwoSIJSCC":
+    elif cfg.model_name == "baseFAJSCCwSA" or cfg.model_name == "baseFAJSCCwoSA":
         model_info['n_feats_list'] = [60,90,120,360] 
 
-    elif cfg.model_name == "baseFAJSCCr12_00" or cfg.model_name == "baseFAwoSIJSCCr12_00":
+    elif cfg.model_name == "baseFAJSCCwSAr12_00" or cfg.model_name == "baseFAJSCCwoSAr12_00":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.0
         model_info['ratio2'] = 0.0
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2']         
-    elif cfg.model_name == "baseFAJSCCr12_02" or cfg.model_name == "baseFAwoSIJSCCr12_02":
+    elif cfg.model_name == "baseFAJSCCwSAr12_02" or cfg.model_name == "baseFAJSCCwoSAr12_02":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.2
         model_info['ratio2'] = 0.2
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr12_04" or cfg.model_name == "baseFAwoSIJSCCr12_04":
+    elif cfg.model_name == "baseFAJSCCwSAr12_04" or cfg.model_name == "baseFAJSCCwoSAr12_04":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.4
         model_info['ratio2'] = 0.4
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr12_05" or cfg.model_name == "baseFAwoSIJSCCr12_05":
+    elif cfg.model_name == "baseFAJSCCwSAr12_05" or cfg.model_name == "baseFAJSCCwoSAr12_05":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.5
         model_info['ratio2'] = 0.5
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr12_06" or cfg.model_name == "baseFAwoSIJSCCr12_06":
+    elif cfg.model_name == "baseFAJSCCwSAr12_06" or cfg.model_name == "baseFAJSCCwoSAr12_06":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.6
         model_info['ratio2'] = 0.6
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr12_08" or cfg.model_name == "baseFAwoSIJSCCr12_08":
+    elif cfg.model_name == "baseFAJSCCwSAr12_08" or cfg.model_name == "baseFAJSCCwoSAr12_08":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.8
         model_info['ratio2'] = 0.8
         cfg.ratio1 = model_info['ratio1']
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr12_10" or cfg.model_name == "baseFAwoSIJSCCr12_10":
+    elif cfg.model_name == "baseFAJSCCwSAr12_10" or cfg.model_name == "baseFAJSCCwoSAr12_10":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 1.0
         model_info['ratio2'] = 1.0
@@ -83,62 +83,62 @@ def get_model_info(cfg):
         
         
         
-    elif cfg.model_name == "baseFAJSCCr1_00" or cfg.model_name == "baseFAwoSIJSCCr1_00":
+    elif cfg.model_name == "baseFAJSCCwSAr1_00" or cfg.model_name == "baseFAJSCCwoSAr1_00":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.0
         cfg.ratio1 = model_info['ratio1']       
-    elif cfg.model_name == "baseFAJSCCr1_02" or cfg.model_name == "baseFAwoSIJSCCr1_02":
+    elif cfg.model_name == "baseFAJSCCwSAr1_02" or cfg.model_name == "baseFAJSCCwoSAr1_02":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.2
         cfg.ratio1 = model_info['ratio1']
-    elif cfg.model_name == "baseFAJSCCr1_04" or cfg.model_name == "baseFAwoSIJSCCr1_04":
+    elif cfg.model_name == "baseFAJSCCwSAr1_04" or cfg.model_name == "baseFAJSCCwoSAr1_04":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.4
         cfg.ratio1 = model_info['ratio1']
-    elif cfg.model_name == "baseFAJSCCr1_05" or cfg.model_name == "baseFAwoSIJSCCr1_05":
+    elif cfg.model_name == "baseFAJSCCwSAr1_05" or cfg.model_name == "baseFAJSCCwoSAr1_05":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.5
         cfg.ratio1 = model_info['ratio1']
-    elif cfg.model_name == "baseFAJSCCr1_06" or cfg.model_name == "baseFAwoSIJSCCr1_06":
+    elif cfg.model_name == "baseFAJSCCwSAr1_06" or cfg.model_name == "baseFAJSCCwoSAr1_06":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.6
         cfg.ratio1 = model_info['ratio1']
-    elif cfg.model_name == "baseFAJSCCr1_08" or cfg.model_name == "baseFAwoSIJSCCr1_08":
+    elif cfg.model_name == "baseFAJSCCwSAr1_08" or cfg.model_name == "baseFAJSCCwoSAr1_08":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 0.8
         cfg.ratio1 = model_info['ratio1']
-    elif cfg.model_name == "baseFAJSCCr1_10" or cfg.model_name == "baseFAwoSIJSCCr1_10":
+    elif cfg.model_name == "baseFAJSCCwSAr1_10" or cfg.model_name == "baseFAJSCCwoSAr1_10":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio1'] = 1.0
         cfg.ratio1 = model_info['ratio1']
         
         
         
-    elif cfg.model_name == "baseFAJSCCr2_00" or cfg.model_name == "baseFAwoSIJSCCr2_00":
+    elif cfg.model_name == "baseFAJSCCwSAr2_00" or cfg.model_name == "baseFAJSCCwoSAr2_00":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.0
         cfg.ratio2 = model_info['ratio2']         
-    elif cfg.model_name == "baseFAJSCCr2_02" or cfg.model_name == "baseFAwoSIJSCCr2_02":
+    elif cfg.model_name == "baseFAJSCCwSAr2_02" or cfg.model_name == "baseFAJSCCwoSAr2_02":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.2
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr2_04" or cfg.model_name == "baseFAwoSIJSCCr2_04":
+    elif cfg.model_name == "baseFAJSCCwSAr2_04" or cfg.model_name == "baseFAJSCCwoSAr2_04":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.4
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr2_05" or cfg.model_name == "baseFAwoSIJSCCr2_05":
+    elif cfg.model_name == "baseFAJSCCwSAr2_05" or cfg.model_name == "baseFAJSCCwoSAr2_05":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.5
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr2_06" or cfg.model_name == "baseFAwoSIJSCCr2_06":
+    elif cfg.model_name == "baseFAJSCCwSAr2_06" or cfg.model_name == "baseFAJSCCwoSAr2_06":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.6
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr2_08" or cfg.model_name == "baseFAwoSIJSCCr2_08":
+    elif cfg.model_name == "baseFAJSCCwSAr2_08" or cfg.model_name == "baseFAJSCCwoSAr2_08":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 0.8
         cfg.ratio2 = model_info['ratio2'] 
-    elif cfg.model_name == "baseFAJSCCr2_10" or cfg.model_name == "baseFAwoSIJSCCr2_10":
+    elif cfg.model_name == "baseFAJSCCwSAr2_10" or cfg.model_name == "baseFAJSCCwoSAr2_10":
         model_info['n_feats_list'] = [60,90,120,360]
         model_info['ratio2'] = 1.0
         cfg.ratio2 = model_info['ratio2'] 
@@ -161,25 +161,25 @@ def ModelMaker(cfg):
         model = ResJSCC(model_info)
     elif cfg.model_name == "smallSwinJSCC" or cfg.model_name == "baseSwinJSCC":
         model = SwinJSCC(model_info)
-    elif cfg.model_name == "smallFAJSCC" or cfg.model_name == "baseFAJSCC":
-        model = FAJSCC(model_info)
-    elif cfg.model_name == "smallFAwoSIJSCC" or cfg.model_name == "baseFAwoSIJSCC":
-        model = FAwoSIJSCC(model_info)
+    elif cfg.model_name == "smallFAJSCCwSA" or cfg.model_name == "baseFAJSCCwSA":
+        model = FAJSCCwSA(model_info)
+    elif cfg.model_name == "smallFAJSCCwoSA" or cfg.model_name == "baseFAJSCCwoSA":
+        model = FAJSCCwoSA(model_info)
 
-    elif cfg.model_name == "baseFAJSCCr12_00" or cfg.model_name == "baseFAJSCCr12_02" or cfg.model_name == "baseFAJSCCr12_04" or cfg.model_name == "baseFAJSCCr12_05" or cfg.model_name == "baseFAJSCCr12_06" or cfg.model_name == "baseFAJSCCr12_08" or cfg.model_name == "baseFAJSCCr12_10":
-        model = FAJSCC(model_info)
-    elif cfg.model_name == "baseFAJSCCr1_00" or cfg.model_name == "baseFAJSCCr1_02" or cfg.model_name == "baseFAJSCCr1_04" or cfg.model_name == "baseFAJSCCr1_05" or cfg.model_name == "baseFAJSCCr1_06" or cfg.model_name == "baseFAJSCCr1_08" or cfg.model_name == "baseFAJSCCr1_10":
-        model = FAJSCC(model_info)
-    elif cfg.model_name == "baseFAJSCCr2_00" or cfg.model_name == "baseFAJSCCr2_02" or cfg.model_name == "baseFAJSCCr2_04" or cfg.model_name == "baseFAJSCCr2_05" or cfg.model_name == "baseFAJSCCr2_06" or cfg.model_name == "baseFAJSCCr2_08" or cfg.model_name == "baseFAJSCCr2_10":
-        model = FAJSCC(model_info)
+    elif cfg.model_name == "baseFAJSCCwSAr12_00" or cfg.model_name == "baseFAJSCCwSAr12_02" or cfg.model_name == "baseFAJSCCwSAr12_04" or cfg.model_name == "baseFAJSCCwSAr12_05" or cfg.model_name == "baseFAJSCCwSAr12_06" or cfg.model_name == "baseFAJSCCwSAr12_08" or cfg.model_name == "baseFAJSCCwSAr12_10":
+        model = FAJSCCwSA(model_info)
+    elif cfg.model_name == "baseFAJSCCwSAr1_00" or cfg.model_name == "baseFAJSCCwSAr1_02" or cfg.model_name == "baseFAJSCCwSAr1_04" or cfg.model_name == "baseFAJSCCwSAr1_05" or cfg.model_name == "baseFAJSCCwSAr1_06" or cfg.model_name == "baseFAJSCCwSAr1_08" or cfg.model_name == "baseFAJSCCwSAr1_10":
+        model = FAJSCCwSA(model_info)
+    elif cfg.model_name == "baseFAJSCCwSAr2_00" or cfg.model_name == "baseFAJSCCwSAr2_02" or cfg.model_name == "baseFAJSCCwSAr2_04" or cfg.model_name == "baseFAJSCCwSAr2_05" or cfg.model_name == "baseFAJSCCwSAr2_06" or cfg.model_name == "baseFAJSCCwSAr2_08" or cfg.model_name == "baseFAJSCCwSAr2_10":
+        model = FAJSCCwSA(model_info)
         
         
-    elif cfg.model_name == "baseFAwoSIJSCCr12_00" or cfg.model_name == "baseFAwoSIJSCCr12_02" or cfg.model_name == "baseFAwoSIJSCCr12_04" or cfg.model_name == "baseFAwoSIJSCCr12_05" or cfg.model_name == "baseFAwoSIJSCCr12_06" or cfg.model_name == "baseFAwoSIJSCCr12_08" or cfg.model_name == "baseFAwoSIJSCCr12_10":
-        model = FAwoSIJSCC(model_info)
-    elif cfg.model_name == "baseFAwoSIJSCCr1_00" or cfg.model_name == "baseFAwoSIJSCCr1_02" or cfg.model_name == "baseFAwoSIJSCCr1_04" or cfg.model_name == "baseFAwoSIJSCCr1_05" or cfg.model_name == "baseFAwoSIJSCCr1_06" or cfg.model_name == "baseFAwoSIJSCCr1_08" or cfg.model_name == "baseFAwoSIJSCCr1_10":
-        model = FAwoSIJSCC(model_info)
-    elif cfg.model_name == "baseFAwoSIJSCCr2_00" or cfg.model_name == "baseFAwoSIJSCCr2_02" or cfg.model_name == "baseFAwoSIJSCCr2_04" or cfg.model_name == "baseFAwoSIJSCCr2_05" or cfg.model_name == "baseFAwoSIJSCCr2_06" or cfg.model_name == "baseFAwoSIJSCCr2_08" or cfg.model_name == "baseFAwoSIJSCCr2_10":
-        model = FAwoSIJSCC(model_info)
+    elif cfg.model_name == "baseFAJSCCwoSAr12_00" or cfg.model_name == "baseFAJSCCwoSAr12_02" or cfg.model_name == "baseFAJSCCwoSAr12_04" or cfg.model_name == "baseFAJSCCwoSAr12_05" or cfg.model_name == "baseFAJSCCwoSAr12_06" or cfg.model_name == "baseFAJSCCwoSAr12_08" or cfg.model_name == "baseFAJSCCwoSAr12_10":
+        model = FAJSCCwoSA(model_info)
+    elif cfg.model_name == "baseFAJSCCwoSAr1_00" or cfg.model_name == "baseFAJSCCwoSAr1_02" or cfg.model_name == "baseFAJSCCwoSAr1_04" or cfg.model_name == "baseFAJSCCwoSAr1_05" or cfg.model_name == "baseFAJSCCwoSAr1_06" or cfg.model_name == "baseFAJSCCwoSAr1_08" or cfg.model_name == "baseFAJSCCwoSAr1_10":
+        model = FAJSCCwoSA(model_info)
+    elif cfg.model_name == "baseFAJSCCwoSAr2_00" or cfg.model_name == "baseFAJSCCwoSAr2_02" or cfg.model_name == "baseFAJSCCwoSAr2_04" or cfg.model_name == "baseFAJSCCwoSAr2_05" or cfg.model_name == "baseFAJSCCwoSAr2_06" or cfg.model_name == "baseFAJSCCwoSAr2_08" or cfg.model_name == "baseFAJSCCwoSAr2_10":
+        model = FAJSCCwoSA(model_info)
 
     else:
         raise ValueError(f'{cfg.model_name} model is not implemented yet')

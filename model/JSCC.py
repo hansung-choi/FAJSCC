@@ -105,9 +105,9 @@ class SwinJSCC(nn.Module):
         return self.epoch
 
 
-class FAwoSIJSCC(nn.Module): # Content Aware JSCC
+class FAJSCCwoSA(nn.Module): # Content Aware JSCC
     def __init__(self, model_info):
-        super(FAwoSIJSCC, self).__init__()
+        super(FAJSCCwoSA, self).__init__()
         #self.epoch = 0
         self.epoch = nn.Parameter(torch.zeros(1))
         self.color_channel = model_info['color_channel']
@@ -118,9 +118,9 @@ class FAwoSIJSCC(nn.Module): # Content Aware JSCC
         self.cpp = 1/self.rcpp
         self.chan_type = model_info['chan_type']
 
-        self.Encoder = FAwoSIEncoder(model_info)
+        self.Encoder = FAEncoder_woSA(model_info)
         self.channel = Channel(self.chan_type)
-        self.Decoder = FAwoSIDecoder(model_info)
+        self.Decoder = FADecoder_woSA(model_info)
         
     def forward(self, x,ROI_Index=None, SNR_info=5):
         # input shape = B X C X H X W
@@ -150,9 +150,9 @@ class FAwoSIJSCC(nn.Module): # Content Aware JSCC
         return self.epoch
 
 
-class FAJSCC(nn.Module): # Content Aware SNR Adaptive JSCC
+class FAJSCCwSA(nn.Module): # Content Aware SNR Adaptive JSCC
     def __init__(self, model_info):
-        super(FAJSCC, self).__init__()
+        super(FAJSCCwSA, self).__init__()
         #self.epoch = 0
         self.epoch = nn.Parameter(torch.zeros(1))
         self.color_channel = model_info['color_channel']
@@ -163,9 +163,9 @@ class FAJSCC(nn.Module): # Content Aware SNR Adaptive JSCC
         self.cpp = 1/self.rcpp
         self.chan_type = model_info['chan_type']
 
-        self.Encoder = FAEncoder(model_info)
+        self.Encoder = FAEncoder_wSA(model_info)
         self.channel = Channel(self.chan_type)
-        self.Decoder = FADecoder(model_info)
+        self.Decoder = FADecoder_wSA(model_info)
         
     def forward(self, x,ROI_Index=None, SNR_info=5):
         # input shape = B X C X H X W

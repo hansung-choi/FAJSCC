@@ -2,8 +2,8 @@ from .common_component import *
 from .ConvComponent import *
 from .ResConvComponent import conv_ResBlock
 from .SWComponent import SWGroup
-from .FAComponent import FAGroup
-from .FAwoSIComponent import FAwoSIGroup
+from .FAwSAComponent import FAGroup_wSA
+from .FAwoSAComponent import FAGroup_woSA
 
 class ConvEncoder(nn.Module):
     def __init__(self, model_info):
@@ -21,7 +21,6 @@ class ConvEncoder(nn.Module):
         self.layer2 = conv_block1(n_feats_list[0], n_feats_list[1], kernel_size=ksize, stride=2, padding=padding_L)        
         self.layer3 = conv_block1(n_feats_list[1], n_feats_list[2], kernel_size=ksize, stride=1, padding=padding_L)
         self.layer4 = conv_block1(n_feats_list[2], n_feats_list[3], kernel_size=ksize, stride=1, padding=padding_L)
-        #self.layer5 = conv_block1(n_feats_list[3], C, kernel_size=ksize, stride=1, padding=padding_L)
         self.layer5 = conv1(n_feats_list[3], C, kernel_size=ksize, stride=1, padding=padding_L)
 
         
@@ -104,9 +103,9 @@ class SwinEncoder(nn.Module):
         return out        
         
         
-class FAwoSIEncoder(nn.Module):
+class FAEncoder_woSA(nn.Module):
     def __init__(self, model_info):
-        super(FAwoSIEncoder, self).__init__()
+        super(FAEncoder_woSA, self).__init__()
         color_channel = model_info['color_channel']
         n_feats_list = model_info['n_feats_list']
         n_block_list = model_info['n_block_list']
@@ -127,7 +126,7 @@ class FAwoSIEncoder(nn.Module):
                 downsample_layer = PatchMerging(dim=n_feats_list[i-1],out_dim=n_feats_list[i])
             self.downsample_layers.append(downsample_layer)
             
-            group_layer = FAwoSIGroup(n_feats_list[i],n_block_list[i],window_size_list[i],ratio)
+            group_layer = FAGroup_woSA(n_feats_list[i],n_block_list[i],window_size_list[i],ratio)
             self.group_layers.append(group_layer)
             
         self.head_list = nn.Conv2d(n_feats_list[-1], C, kernel_size=1, stride=1, padding=0)
@@ -150,9 +149,9 @@ class FAwoSIEncoder(nn.Module):
             out = self.head_list(out)
             return out
              
-class FAEncoder(nn.Module):
+class FAEncoder_wSA(nn.Module):
     def __init__(self, model_info):
-        super(FAEncoder, self).__init__()
+        super(FAEncoder_wSA, self).__init__()
         color_channel = model_info['color_channel']
         n_feats_list = model_info['n_feats_list']
         n_block_list = model_info['n_block_list']
@@ -173,7 +172,7 @@ class FAEncoder(nn.Module):
                 downsample_layer = PatchMerging(dim=n_feats_list[i-1],out_dim=n_feats_list[i])
             self.downsample_layers.append(downsample_layer)
             
-            group_layer = FAGroup(n_feats_list[i],n_block_list[i],window_size_list[i],ratio)
+            group_layer = FAGroup_wSA(n_feats_list[i],n_block_list[i],window_size_list[i],ratio)
             self.group_layers.append(group_layer)
             
         self.head_list = nn.Conv2d(n_feats_list[-1], C, kernel_size=1, stride=1, padding=0)

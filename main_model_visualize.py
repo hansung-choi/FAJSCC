@@ -68,7 +68,7 @@ def main(cfg: DictConfig):
     save_name = f"{task}_{data}_{chan_type}_SNR{str(SNR).zfill(3)}_rcpp{rcpp}_{metric}_{model_name}.pt"    
     save_name_backup = f"{task}_{data}_{chan_type}_SNR{str(SNR).zfill(3)}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
     
-    if model_name == "smallFAJSCC" or model_name == "baseFAJSCC":
+    if model_name == "smallFAJSCCwSA" or model_name == "baseFAJSCCwSA":
         save_name = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}.pt"
         save_name_backup = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
           

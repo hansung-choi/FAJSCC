@@ -28,18 +28,18 @@ def main(cfg: DictConfig):
     # make data_info
     data_info = DataMaker(cfg)
     
-    model_name_list_r12 = ["baseFAwoSIJSCCr12_00","baseFAwoSIJSCCr12_02","baseFAwoSIJSCCr12_04","baseFAwoSIJSCCr12_05","baseFAwoSIJSCCr12_06","baseFAwoSIJSCCr12_08","baseFAwoSIJSCCr12_10","baseFAJSCCr12_00","baseFAJSCCr12_02","baseFAJSCCr12_04","baseFAJSCCr12_05","baseFAJSCCr12_06","baseFAJSCCr12_08","baseFAJSCCr12_10"]
+    model_name_list_r12 = ["baseFAJSCCwSAr12_00","baseFAJSCCwSAr12_02","baseFAJSCCwSAr12_04","baseFAJSCCwSAr12_05","baseFAJSCCwSAr12_06","baseFAJSCCwSAr12_08","baseFAJSCCwSAr12_10","baseFAJSCCwoSAr12_00","baseFAJSCCwoSAr12_02","baseFAJSCCwoSAr12_04","baseFAJSCCwoSAr12_05","baseFAJSCCwoSAr12_06","baseFAJSCCwoSAr12_08","baseFAJSCCwoSAr12_10"]
 
-    model_name_list_r1 = ["baseFAwoSIJSCCr1_00","baseFAwoSIJSCCr1_02","baseFAwoSIJSCCr1_04","baseFAwoSIJSCCr1_05","baseFAwoSIJSCCr1_06","baseFAwoSIJSCCr1_08","baseFAwoSIJSCCr1_10","baseFAJSCCr1_00","baseFAJSCCr1_02","baseFAJSCCr1_04","baseFAJSCCr1_05","baseFAJSCCr1_06","baseFAJSCCr1_08","baseFAJSCCr1_10"]
+    model_name_list_r1 = ["baseFAJSCCwSAr1_00","baseFAJSCCwSAr1_02","baseFAJSCCwSAr1_04","baseFAJSCCwSAr1_05","baseFAJSCCwSAr1_06","baseFAJSCCwSAr1_08","baseFAJSCCwSAr1_10","baseFAJSCCwoSAr1_00","baseFAJSCCwoSAr1_02","baseFAJSCCwoSAr1_04","baseFAJSCCwoSAr1_05","baseFAJSCCwoSAr1_06","baseFAJSCCwoSAr1_08","baseFAJSCCwoSAr1_10"]
 
-    model_name_list_r2 = ["baseFAwoSIJSCCr2_00","baseFAwoSIJSCCr2_02","baseFAwoSIJSCCr2_04","baseFAwoSIJSCCr2_05","baseFAwoSIJSCCr2_06","baseFAwoSIJSCCr2_08","baseFAwoSIJSCCr2_10","baseFAJSCCr2_00","baseFAJSCCr2_02","baseFAJSCCr2_04","baseFAJSCCr2_05","baseFAJSCCr2_06","baseFAJSCCr2_08","baseFAJSCCr2_10"]
+    model_name_list_r2 = ["baseFAJSCCwSAr2_00","baseFAJSCCwSAr2_02","baseFAJSCCwSAr2_04","baseFAJSCCwSAr2_05","baseFAJSCCwSAr2_06","baseFAJSCCwSAr2_08","baseFAJSCCwSAr2_10","baseFAJSCCwoSAr2_00","baseFAJSCCwoSAr2_02","baseFAJSCCwoSAr2_04","baseFAJSCCwoSAr2_05","baseFAJSCCwoSAr2_06","baseFAJSCCwoSAr2_08","baseFAJSCCwoSAr2_10"]
     
     model_name_list = ["baseSwinJSCC"]
 
 
-    model_type_list_r1 = ["FAwoSIJSCCr1","FAJSCCr1"]
-    model_type_list_r2 = ["FAwoSIJSCCr2","FAJSCCr2"]
-    model_type_list_r12 = ["FAwoSIJSCCr12","FAJSCCr12"]
+    model_type_list_r1 = ["FAJSCCwSAr1","FAJSCCwoSAr1"]
+    model_type_list_r2 = ["FAJSCCwSAr2","FAJSCCwoSAr2"]
+    model_type_list_r12 = ["FAJSCCwSAr12","FAJSCCwoSAr12"]
 
     
     model_name_list_r12.reverse()

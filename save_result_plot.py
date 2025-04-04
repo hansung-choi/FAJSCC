@@ -48,6 +48,7 @@ def save_Mmemory_performance_plot(cfg,logger,total_eval_dict,model_name_list,rcp
     #marker_list =  #https://stackoverflow.com/questions/59647765/how-to-obtain-a-list-of-all-markers-in-matplotlib
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
     color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']    
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']    
     
     n = len(model_name_list)
     color = cm.rainbow(np.linspace(0, 1, n))
@@ -110,7 +111,7 @@ def save_Mparams_performance_plot(cfg,logger,total_eval_dict,model_name_list,rcp
 
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']    
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']   
     n = len(model_name_list)
     color = cm.rainbow(np.linspace(0, 1, n))
 
@@ -172,7 +173,7 @@ def save_GFlops_performance_plot(cfg,logger,total_eval_dict,model_name_list,rcpp
 
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']    
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']   
     n = len(model_name_list)
     color = cm.rainbow(np.linspace(0, 1, n))
 
@@ -235,7 +236,7 @@ def save_Mmemory_performance_plot_type2(cfg,logger,total_eval_dict,model_name_li
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']  
     
     plt.rcParams["figure.figsize"] = (14,8)
     
@@ -304,7 +305,7 @@ def save_Mparams_performance_plot_type2(cfg,logger,total_eval_dict,model_name_li
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']  
     
     plt.rcParams["figure.figsize"] = (14,8)
     
@@ -373,7 +374,7 @@ def save_GFlops_performance_plot_type2(cfg,logger,total_eval_dict,model_name_lis
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']  
     
     plt.rcParams["figure.figsize"] = (14,8)
     
@@ -440,7 +441,7 @@ def save_GFlops_performance_plot_type3(cfg,logger,total_eval_dict,model_name_lis
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']  
     
     plt.rcParams["figure.figsize"] = (10,8)
     
@@ -505,11 +506,11 @@ def save_GFlops_performance_ratio_plot(cfg,logger,total_eval_dict,encoder_side_l
         plot_save_name += "_" + model_type
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']  
     
-    encoder_color_list = ['r^--','b^--']
-    both_color_list = ['rd-.','bd-.']
-    decoder_color_list = ['rx:','bx:']
+    encoder_color_list = ['b^--','r^--']
+    both_color_list = ['bd-.','rd-.']
+    decoder_color_list = ['bx:','rx:']
     fixed_color_list = ['go-','co-','mo-']
     
     
@@ -656,7 +657,7 @@ def save_performance_GFlops_Mmemory_plot(cfg,logger,total_eval_dict,model_name_l
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['ro-','bo-','go-','co-','mo-','ro--','bo--','go--','co--','mo--']
+    color_list = ['bo-','ro-','go-','co-','mo-','bo--','ro--','go--','co--','mo--']
     
     plt.rcParams["figure.figsize"] = (20,8) #(14,8)
     
@@ -698,7 +699,7 @@ def save_performance_GFlops_Mmemory_plot(cfg,logger,total_eval_dict,model_name_l
     m_type_index = 0
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['rd--','bd--','gd--','cd--','md--']
+    color_list = ['bd--','rd--','gd--','cd--','md--']
     
     
     ax2 = ax1.twiny() # ax1.twiny():use same y axis, ax1.twinx():use same x axis
@@ -766,7 +767,7 @@ def save_SNR_performance_plot(cfg,logger,total_eval_dict,model_name_list,rcpp,SN
 
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']
     
     plt.rcParams["figure.figsize"] = (14,5) #(14,8)
     
@@ -824,7 +825,7 @@ def save_rcpp_performance_plot(cfg,logger,total_eval_dict,model_name_list,rcpp_l
 
 
     #color_list = ['r-','b-','g-','c-','m-','y-','k-','w-']
-    color_list = ['r-','b-','g-','c-','m-','r--','b--','g--','c--','m--']
+    color_list = ['b-','r-','g-','c-','m-','b--','r--','g--','c--','m--']
     
     plt.rcParams["figure.figsize"] = (10,8) #(14,8)
     

@@ -27,34 +27,15 @@ def main(cfg: DictConfig):
     
     # make data_info
     data_info = DataMaker(cfg)
-    
-
-    ConvJSCC_list = ["smallConvJSCC","baseConvJSCC"]
-    ResJSCC_list = ["smallResJSCC","baseResJSCC"]
-    SwinJSCC_list = ["smallSwinJSCC","baseSwinJSCC"]
-    FAwoSIJSCC_list = ["smallFAwoSIJSCC","baseFAwoSIJSCC"]
-    FAJSCC_list = ["smallFAJSCC","baseFAJSCC"]
-    
-    
-    
-    model_name_full_list = ConvJSCC_list + ResJSCC_list + SwinJSCC_list + FAwoSIJSCC_list + FAJSCC_list
-    model_full_type_list = ["ConvJSCC","ResJSCC","SwinJSCC","FAwoSIJSCC","FAJSCC"]
-
- 
-    #full_rcpp_list=[12,16,24,32]
-    #full_SNR_list=[1,4,7,10]
-
-             
-
-    
-    model_name_list = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAwoSIJSCC","baseFAwoSIJSCC","smallFAJSCC","baseFAJSCC"]
-    model_type_list = ["ConvJSCC","ResJSCC","SwinJSCC","FAwoSIJSCC","FAJSCC"]
+        
+    model_name_list = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAJSCCwSA","baseFAJSCCwSA","smallFAJSCCwoSA","baseFAJSCCwoSA"]
+    model_type_list = ["ConvJSCC","ResJSCC","SwinJSCC","FAJSCCwSA","FAJSCCwoSA"]
 
 
-    model_name_list0 = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAwoSIJSCC","baseFAwoSIJSCC"]
-    model_type_list0 = ["ConvJSCC","ResJSCC","SwinJSCC","FAwoSIJSCC"]
-    model_name_list1 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAwoSIJSCC","smallFAJSCC"]
-    model_name_list2 = ["baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAwoSIJSCC","baseFAJSCC"]
+    model_name_list0 = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAJSCCwoSA","baseFAJSCCwoSA"]
+    model_type_list0 = ["ConvJSCC","ResJSCC","SwinJSCC","FAJSCCwoSA"]
+    model_name_list1 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAJSCCwSA","smallFAJSCCwoSA"]
+    model_name_list2 = ["baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAJSCCwSA","baseFAJSCCwoSA"]
 
     
     model_name_list.reverse()
@@ -116,7 +97,7 @@ def main(cfg: DictConfig):
     
     save_SNR_performance_table(cfg,logger,total_eval_dict1,model_name_list2,12,SNR_list)
 
-    model_name_list12 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAwoSIJSCC","smallFAJSCC","baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAwoSIJSCC","baseFAJSCC"]
+    model_name_list12 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAJSCCwSA","smallFAJSCCwoSA","baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAJSCCwSA","baseFAJSCCwoSA"]
     model_name_list12.reverse()
     
     save_SNR_performance_plot(cfg,logger,total_eval_dict1,model_name_list12,12,SNR_list)

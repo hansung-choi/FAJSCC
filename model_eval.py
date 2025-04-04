@@ -15,7 +15,7 @@ import gc
 def cal_flops(cfg, logger, model): 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     H, W = cfg.input_resolution
-    H, W = 512,768  # resolution of DIV2K0801 image data
+    H, W = 512,768  # resolution of Kodak image data
     input_image = torch.rand(1,3,H,W).float()
     input_image = input_image.to(device) 
     model.to(device)    
@@ -85,7 +85,7 @@ class ModelEvaluater():
 
     def one_epoch_eval(self,cfg, logger, model, trainloader, testloader, criterion):
         evaluation_dictionary = {}
-        if self.task == "ImageTransmission" or self.task == "FeatureAwareIT" or self.task == "FAwoSIIT":
+        if self.task == "ImageTransmission" or self.task == "FAITwSA" or self.task == "FAITwoSA":
             evaluation_dictionary = self.eval_task(cfg, logger, model, trainloader, testloader, criterion)
         else:
             raise ValueError(f'{self.task} task train is not implemented yet')
@@ -151,11 +151,6 @@ def save_model_evaluation_result_plot(cfg,evaluation_dictionary):
     else:
         raise ValueError(f'model evaluation for {cfg.task_name} is not implemented yet')
 
-    """
-    elif cfg.task_name == "PwRe03":
-        save_PwRe03_model_evaluation_result_plot(cfg,evaluation_dictionary,save_name)
-    """
-
 def save_IT_model_evaluation_result_plot(cfg,evaluation_dictionary,save_name):
     
     return None
@@ -210,15 +205,13 @@ class Visualizer():
         if not os.path.exists(save_path):
             os.mkdir(save_path)
 
-        save_name = save_path + f'{chan_type}_{cfg.data_info.data_name}_Index{str(index).zfill(3)}_{cfg.model_name}_SNR{str(cfg.SNR_info).zfill(3)}' \
-                            f'_rcpp{str(cfg.rcpp).zfill(3)}_{cfg.performance_metric}' 
 
         save_name = save_path + f'{chan_type}_Kodak_Index{str(index).zfill(3)}_{cfg.model_name}_SNR{str(cfg.SNR_info).zfill(3)}' \
                             f'_rcpp{str(cfg.rcpp).zfill(3)}_{cfg.performance_metric}' 
 
     
         since = time.time()
-        if self.task == "ImageTransmission" or self.task == "FeatureAwareIT" or self.task == "FAwoSIIT":
+        if self.task == "ImageTransmission" or self.task == "FAITwSA" or self.task == "FAITwoSA":
             test_result = self.visualize_IT_test_result(cfg, model, images, test_SNR_info,save_name)
             test_result = self.visualize_IT_patchwise_test_result(cfg, model, images, test_SNR_info,save_name)
         else:

@@ -61,26 +61,26 @@ def get_loaded_model(cfg,logger,model_name,rcpp,SNR):
     metric = cfg.performance_metric
     random_seed_num = cfg.random_seed
     random_num = str(random_seed_num).zfill(3)
-    
-    if cfg.model_name == "baseFAJSCCr12_00" or cfg.model_name == "baseFAJSCCr12_02" or cfg.model_name == "baseFAJSCCr12_04" or cfg.model_name == "baseFAJSCCr12_05" or cfg.model_name == "baseFAJSCCr12_06" or cfg.model_name == "baseFAJSCCr12_08" or cfg.model_name == "baseFAJSCCr12_10":
-        model_name = "baseFAJSCC"
-    elif cfg.model_name == "baseFAJSCCr1_00" or cfg.model_name == "baseFAJSCCr1_02" or cfg.model_name == "baseFAJSCCr1_04" or cfg.model_name == "baseFAJSCCr1_05" or cfg.model_name == "baseFAJSCCr1_06" or cfg.model_name == "baseFAJSCCr1_08" or cfg.model_name == "baseFAJSCCr1_10":
-        model_name = "baseFAJSCC"
-    elif cfg.model_name == "baseFAJSCCr2_00" or cfg.model_name == "baseFAJSCCr2_02" or cfg.model_name == "baseFAJSCCr2_04" or cfg.model_name == "baseFAJSCCr2_05" or cfg.model_name == "baseFAJSCCr2_06" or cfg.model_name == "baseFAJSCCr2_08" or cfg.model_name == "baseFAJSCCr2_10":
-        model_name = "baseFAJSCC"  
+
+    if cfg.model_name == "baseFAJSCCwSAr12_00" or cfg.model_name == "baseFAJSCCwSAr12_02" or cfg.model_name == "baseFAJSCCwSAr12_04" or cfg.model_name == "baseFAJSCCwSAr12_05" or cfg.model_name == "baseFAJSCCwSAr12_06" or cfg.model_name == "baseFAJSCCwSAr12_08" or cfg.model_name == "baseFAJSCCwSAr12_10":
+        model_name = "baseFAJSCCwSA"
+    elif cfg.model_name == "baseFAJSCCwSAr1_00" or cfg.model_name == "baseFAJSCCwSAr1_02" or cfg.model_name == "baseFAJSCCwSAr1_04" or cfg.model_name == "baseFAJSCCwSAr1_05" or cfg.model_name == "baseFAJSCCwSAr1_06" or cfg.model_name == "baseFAJSCCwSAr1_08" or cfg.model_name == "baseFAJSCCwSAr1_10":
+        model_name = "baseFAJSCCwSA"
+    elif cfg.model_name == "baseFAJSCCwSAr2_00" or cfg.model_name == "baseFAJSCCwSAr2_02" or cfg.model_name == "baseFAJSCCwSAr2_04" or cfg.model_name == "baseFAJSCCwSAr2_05" or cfg.model_name == "baseFAJSCCwSAr2_06" or cfg.model_name == "baseFAJSCCwSAr2_08" or cfg.model_name == "baseFAJSCCwSAr2_10":
+        model_name = "baseFAJSCCwSA"
         
-    elif cfg.model_name == "baseFAwoSIJSCCr12_00" or cfg.model_name == "baseFAwoSIJSCCr12_02" or cfg.model_name == "baseFAwoSIJSCCr12_04" or cfg.model_name == "baseFAwoSIJSCCr12_05" or cfg.model_name == "baseFAwoSIJSCCr12_06" or cfg.model_name == "baseFAwoSIJSCCr12_08" or cfg.model_name == "baseFAwoSIJSCCr12_10":
-        model_name = "baseFAwoSIJSCC"
-    elif cfg.model_name == "baseFAwoSIJSCCr1_00" or cfg.model_name == "baseFAwoSIJSCCr1_02" or cfg.model_name == "baseFAwoSIJSCCr1_04" or cfg.model_name == "baseFAwoSIJSCCr1_05" or cfg.model_name == "baseFAwoSIJSCCr1_06" or cfg.model_name == "baseFAwoSIJSCCr1_08" or cfg.model_name == "baseFAwoSIJSCCr1_10":
-        model_name = "baseFAwoSIJSCC"
-    elif cfg.model_name == "baseFAwoSIJSCCr2_00" or cfg.model_name == "baseFAwoSIJSCCr2_02" or cfg.model_name == "baseFAwoSIJSCCr2_04" or cfg.model_name == "baseFAwoSIJSCCr2_05" or cfg.model_name == "baseFAwoSIJSCCr2_06" or cfg.model_name == "baseFAwoSIJSCCr2_08" or cfg.model_name == "baseFAwoSIJSCCr2_10":
-        model_name = "baseFAwoSIJSCC"
-    
+        
+    elif cfg.model_name == "baseFAJSCCwoSAr12_00" or cfg.model_name == "baseFAJSCCwoSAr12_02" or cfg.model_name == "baseFAJSCCwoSAr12_04" or cfg.model_name == "baseFAJSCCwoSAr12_05" or cfg.model_name == "baseFAJSCCwoSAr12_06" or cfg.model_name == "baseFAJSCCwoSAr12_08" or cfg.model_name == "baseFAJSCCwoSAr12_10":
+        model_name = "baseFAJSCCwoSA"
+    elif cfg.model_name == "baseFAJSCCwoSAr1_00" or cfg.model_name == "baseFAJSCCwoSAr1_02" or cfg.model_name == "baseFAJSCCwoSAr1_04" or cfg.model_name == "baseFAJSCCwoSAr1_05" or cfg.model_name == "baseFAJSCCwoSAr1_06" or cfg.model_name == "baseFAJSCCwoSAr1_08" or cfg.model_name == "baseFAJSCCwoSAr1_10":
+        model_name = "baseFAJSCCwoSA"
+    elif cfg.model_name == "baseFAJSCCwoSAr2_00" or cfg.model_name == "baseFAJSCCwoSAr2_02" or cfg.model_name == "baseFAJSCCwoSAr2_04" or cfg.model_name == "baseFAJSCCwoSAr2_05" or cfg.model_name == "baseFAJSCCwoSAr2_06" or cfg.model_name == "baseFAJSCCwoSAr2_08" or cfg.model_name == "baseFAJSCCwoSAr2_10":
+        model_name = "baseFAJSCCwoSA"        
     
     save_dir = "../../saved_models/"    
     save_name = f"{task}_{data}_{chan_type}_SNR{SNR}_rcpp{rcpp}_{metric}_{model_name}.pt"
     save_name_backup = f"{task}_{data}_{chan_type}_SNR{SNR}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
-    if model_name == "smallFAJSCC" or model_name == "baseFAJSCC":
+    if model_name == "smallFAJSCCwSA" or model_name == "baseFAJSCCwSA":
         save_name = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}.pt"
         save_name_backup = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
 

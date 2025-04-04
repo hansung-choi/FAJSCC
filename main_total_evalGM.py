@@ -28,35 +28,14 @@ def main(cfg: DictConfig):
     # make data_info
     data_info = DataMaker(cfg)
     
-    DeepJSCC_list = ["smallDeepJSCC","baseDeepJSCC","largeDeepJSCC"]
-    DeepJSCCV_list = ["smallDeepJSCC-V","baseDeepJSCC-V","largeDeepJSCC-V"]
-
-    ConvJSCC_list = ["smallConvJSCC","baseConvJSCC","largeConvJSCC"]
-    ResJSCC_list = ["smallResJSCC","baseResJSCC","largeResJSCC"]
-    SWJSCC_list = ["smallSWJSCC","baseSWJSCC","largeSWJSCC"]
-    CAJSCC_list = ["smallCAJSCC","baseCAJSCC","largeCAJSCC"]
-    CASAJSCC_list = ["smallCASAJSCC","baseCASAJSCC","largeCASAJSCC"]
-    
-    
-    
-    model_name_full_list = DeepJSCC_list + ConvJSCC_list + ResJSCC_list + SWJSCC_list + CAJSCC_list + CASAJSCC_list
-    model_full_type_list = ["DeepJSCC","ConvJSCC","ResJSCC","SWJSCC","CAJSCC","CASAJSCC"]
-
- 
-    #full_rcpp_list=[12,16,24,32]
-    #full_SNR_list=[1,4,7,10]
-
-             
-
-    
-    model_name_list = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAwoSIJSCC","baseFAwoSIJSCC","smallFAJSCC","baseFAJSCC"]
-    model_type_list = ["ConvJSCC","ResJSCC","SwinJSCC","FAwoSIJSCC","FAJSCC"]
+    model_name_list = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAJSCCwSA","baseFAJSCCwSA","smallFAJSCCwoSA","baseFAJSCCwoSA"]
+    model_type_list = ["ConvJSCC","ResJSCC","SwinJSCC","FAJSCCwSA","FAJSCCwoSA"]
 
 
-    model_name_list0 = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAwoSIJSCC","baseFAwoSIJSCC"]
-    model_type_list0 = ["ConvJSCC","ResJSCC","SwinJSCC","FAwoSIJSCC"]
-    model_name_list1 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAwoSIJSCC","smallFAJSCC"]
-    model_name_list2 = ["baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAwoSIJSCC","baseFAJSCC"]
+    model_name_list0 = ["smallConvJSCC","baseConvJSCC","smallResJSCC","baseResJSCC","smallSwinJSCC","baseSwinJSCC","smallFAJSCCwoSA","baseFAJSCCwoSA"]
+    model_type_list0 = ["ConvJSCC","ResJSCC","SwinJSCC","FAJSCCwoSA"]
+    model_name_list1 = ["smallConvJSCC","smallResJSCC","smallSwinJSCC","smallFAJSCCwSA","smallFAJSCCwoSA"]
+    model_name_list2 = ["baseConvJSCC","baseResJSCC","baseSwinJSCC","baseFAJSCCwSA","baseFAJSCCwoSA"]
     
     model_name_list.reverse()
     model_type_list.reverse()

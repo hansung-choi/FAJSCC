@@ -45,7 +45,7 @@ def save_loss_plot(total_loss_info_list,cfg, logger):
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
         
-    if model_name == "smallFAJSCC" or model_name == "baseFAJSCC" or model_name == "largeFAJSCC":
+    if model_name == "smallFAJSCCwSA" or model_name == "baseFAJSCCwSA":
         save_name = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}"
     else:
         save_name = f"{task}_{data}_{chan_type}_SNR{str(SNR).zfill(3)}_rcpp{rcpp}_{metric}_{model_name}"    
@@ -98,7 +98,7 @@ def train_model(cfg: DictConfig, logger, model, trainloader, testloader, criteri
     save_name = f"{task}_{data}_{chan_type}_SNR{str(SNR).zfill(3)}_rcpp{rcpp}_{metric}_{model_name}.pt"    
     save_name_backup = f"{task}_{data}_{chan_type}_SNR{str(SNR).zfill(3)}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
     
-    if model_name == "smallFAJSCC" or model_name == "baseFAJSCC" or model_name == "largeFAJSCC":
+    if model_name == "smallFAJSCCwSA" or model_name == "baseFAJSCCwSA":
         save_name = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}.pt"
         save_name_backup = f"{task}_{data}_{chan_type}_rcpp{rcpp}_{metric}_{model_name}_backup.pt"
         
@@ -201,11 +201,11 @@ class Trainer():
         if self.task == "ImageTransmission":
             train_epoch_loss = self.train_IT_task(cfg, logger, model, trainloader, testloader, criterion,
                                                               optimizer,scheduler)
-        elif self.task == "FAwoSIIT":
-            train_epoch_loss = self.train_FAwoSIIT_task(cfg, logger, model, trainloader, testloader, criterion,
+        elif self.task == "FAITwoSA":
+            train_epoch_loss = self.train_FAITwoSA_task(cfg, logger, model, trainloader, testloader, criterion,
                                                               optimizer,scheduler)
-        elif self.task == "FeatureAwareIT":
-            train_epoch_loss = self.train_FAIT_task(cfg, logger, model, trainloader, testloader, criterion,optimizer,scheduler)
+        elif self.task == "FAITwSA":
+            train_epoch_loss = self.train_FAITwSA_task(cfg, logger, model, trainloader, testloader, criterion,optimizer,scheduler)
         else:
             raise ValueError(f'{self.task} task train is not implemented yet')
         return train_epoch_loss
@@ -259,7 +259,7 @@ class Trainer():
 
         return train_epoch_total_loss        
 
-    def train_FAwoSIIT_task(self,cfg: DictConfig, logger, model, trainloader, testloader, criterion, optimizer, scheduler):
+    def train_FAITwoSA_task(self,cfg: DictConfig, logger, model, trainloader, testloader, criterion, optimizer, scheduler):
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         since = time.time()
 
@@ -307,7 +307,7 @@ class Trainer():
 
         return train_epoch_total_loss        
 
-    def train_FAIT_task(self,cfg: DictConfig, logger, model, trainloader, testloader, criterion, optimizer, scheduler):
+    def train_FAITwSA_task(self,cfg: DictConfig, logger, model, trainloader, testloader, criterion, optimizer, scheduler):
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         since = time.time()
 
