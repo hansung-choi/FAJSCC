@@ -44,7 +44,6 @@ class DIV2Kdataset():
         self.train_preprocessor = transforms.Compose([transforms.RandomCrop(128,128),transforms.ToTensor(),transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
         self.test_preprocessor = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
         self.visual_preprocessor = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-        self.toy_visual_preprocessor = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
         data_dir = '../../../data' #'../../../../data'
         if not os.path.exists(data_dir):
             os.mkdir(data_dir)
