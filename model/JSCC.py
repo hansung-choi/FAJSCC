@@ -20,7 +20,7 @@ class ConvJSCC(nn.Module):
         self.channel = Channel(self.chan_type)
         self.Decoder = ConvDecoder(model_info)
         
-    def forward(self, x,ROI_Index=None, SNR_info=5):
+    def forward(self, x, SNR_info=5):
         # input shape = B X C X H X W
 
         encoder_output = self.Encoder(x)
@@ -53,7 +53,7 @@ class ResJSCC(nn.Module):
         self.channel = Channel(self.chan_type)
         self.Decoder = ResDecoder(model_info)
         
-    def forward(self, x,ROI_Index=None, SNR_info=5):
+    def forward(self, x, SNR_info=5):
         # input shape = B X C X H X W
 
         encoder_output = self.Encoder(x)
@@ -87,7 +87,7 @@ class SwinJSCC(nn.Module):
         self.channel = Channel(self.chan_type)
         self.Decoder = SwinDecoder(model_info)
         
-    def forward(self, x,ROI_Index=None, SNR_info=5):
+    def forward(self, x, SNR_info=5):
         # input shape = B X C X H X W
 
         encoder_output = self.Encoder(x)        
@@ -122,7 +122,7 @@ class FAJSCCwoSA(nn.Module): # Content Aware JSCC
         self.channel = Channel(self.chan_type)
         self.Decoder = FADecoder_woSA(model_info)
         
-    def forward(self, x,ROI_Index=None, SNR_info=5):
+    def forward(self, x, SNR_info=5):
         # input shape = B X C X H X W
         decision = []
 
@@ -167,7 +167,7 @@ class FAJSCCwSA(nn.Module): # Content Aware SNR Adaptive JSCC
         self.channel = Channel(self.chan_type)
         self.Decoder = FADecoder_wSA(model_info)
         
-    def forward(self, x,ROI_Index=None, SNR_info=5):
+    def forward(self, x, SNR_info=5):
         # input shape = B X C X H X W
         decision = []
 
