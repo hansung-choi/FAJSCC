@@ -15,55 +15,7 @@ def imshow(img,save_dir=None):
     #plt.show()
     plt.clf()
 
-    
-    
-def make_init_classwise_metric_info(num_classes):
-    init_classwise_metric_info = []
-    for i in range(num_classes):
-        init_classwise_metric_info.append([0,0])
-    #init_class_acc_info[i][0] means the cumulative number of i'th class-tested which is total.
-    #init_class_acc_info[i][1] means the cumulative number of i'th class-tested which is correct classified or mse or other metrics.
-    return init_classwise_metric_info
-
-def refine_classwise_metric_info(classwise_metric_info,metric_type = "mse"):
-    classwise_metric = []
-    if metric_type == "accuracy":
-        constant = 100
-    else:
-        constant = 1
-    
-    for i in range(len(classwise_metric_info)):
-        if classwise_metric_info[i][0] == 0:
-            classwise_metric.append(None)
-        else:
-            classwise_metric.append(classwise_metric_info[i][1]/classwise_metric_info[i][0]*constant)
-    # classwise_metric[i] = metric for i'th class
-    return classwise_metric
-    
-def refine_classwise_metric_info_list(classwise_metric_info_list):
-    classwise_metric_list = []
-    for i in range(len(class_acc_info_list)):
-        acc_per_class = refine_classwise_metric_info(classwise_metric_info_list[i],metric_type = "mse")
-        classwise_metric_list.append(acc_per_class)
-    # classwise_metric_list[i] = classwise_metric for i'th epoch
-    return classwise_metric_list
-
-def update_class_acc_info(class_acc_info,preds,labels):
-    # type(preds) = type(labels) = torch.tensor
-    for i in range(len(preds)):
-        class_acc_info[labels.data[i]][0] +=1
-        if labels.data[i] == preds[i]:
-            class_acc_info[labels.data[i]][1] +=1
-    return class_acc_info
-
-def update_class_mse_info(class_mse_info,image_wise_mse,labels):
-    # type(preds) = type(labels) = torch.tensor
-    for i in range(image_wise_mse.size()[0]):
-        class_mse_info[labels.data[i]][0] +=1
-        class_mse_info[labels.data[i]][1] +=image_wise_mse[i].item()
-    return class_mse_info
-
-    
+     
 def list_round(data,th = 4):
     # type(preds) = type(labels) = torch.tensor
     rounded_data = []
