@@ -239,8 +239,6 @@ class Visualizer():
             criterion = imagewisePSNR()
         elif cfg.performance_metric == "SSIM":
             criterion = imagewiseSSIM()
-        elif cfg.performance_metric == "MS-SSIM":
-            criterion = imagewiseMS_SSIM()
         else:
             raise ValueError(f'Imagewise criterion for {cfg.performance_metric} of {cfg.task_name} task is not implemented yet')   
 
@@ -297,8 +295,6 @@ class Visualizer():
             criterion = imagewisePSNR()
         elif cfg.performance_metric == "SSIM":
             criterion = imagewiseSSIM()
-        elif cfg.performance_metric == "MS-SSIM":
-            criterion = imagewiseMS_SSIM()
         else:
             raise ValueError(f'Imagewise criterion for {cfg.performance_metric} of {cfg.task_name} task is not implemented yet')   
 
